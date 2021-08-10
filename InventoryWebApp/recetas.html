@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+    <link href="/vendor/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+
+<body>
+    <header class="badge bg-primary text-light container-fluid p-3">
+        <div class="container">
+            <div class="row">
+                <a type="button" class="btn btn-primary btn-lg col-3" href="/inventary.html">
+                    <h5>Volver a Inventario</h5>
+                    <img src="img/back-arrow.svg" alt="return" height="35">
+                </a>
+                <div class="col-7">
+                    <h1>Recetas</h1>
+                    <img src="img/recipe.svg" alt="return" height="35">
+                </div>
+                <div class="col-1 center dropdown offset-1" id="userDiv">
+                  <!-- <img src="/img/user.png" width="30"> -->
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                  <ul class="dropdown-menu" aria-labelledby="userMenu" id="userOptions">
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark"
+                onclick="fetchRecipes()">Listar
+                Recetas</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark" data-bs-toggle="modal"
+                data-bs-target="#mainModal" id="btnAddRecipe">
+                Nueva Receta
+              </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark" id="btnConsumitions">
+                Consumiciones
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark" id="btnConsumitionHistory">
+                Historial de Consumiciones
+            </button>
+        </div>
+
+        <main>
+            <div class="row">
+                <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="titleModal">Añade tu Receta</h5>
+          
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div id="bodyModal">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="row mb-4 mt-2">
+                <select class="col-2" style="background-color: #DBDBDB" id="selectSearch">
+                    <option value="3" selected>Recetas</option>
+                    <option value="4">Consumiciones</option>
+                </select>
+                <input type="text" placeholder="busca lo que quieras" class="col-8" id="inputSearch">
+                <button type="button" class="btn btn-primary col-2" id="buttonSearch">Busca</button>
+            </div>
+            <div id="mainHtml" class="row">
+               
+
+            </div>
+        </main>
+    </div>
+    <script src="vendor/bootstrap5/js/bootstrap.bundle.min.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/appRecipes.js"></script>
+    <script src="js/consumitions.js"></script>
+    <script src="js/order.js"></script>
+</body>
+
+</html>
