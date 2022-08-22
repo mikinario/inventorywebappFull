@@ -1,0 +1,7 @@
+FROM openjdk:11
+VOLUME /tmp
+ENV TZ="Europe/Madrid"
+RUN date
+ADD ./inventory-api-0.0.1-SNAPSHOT.jar inventory-api.jar
+EXPOSE 8081
+ENTRYPOINT ["java","-jar","/inventory-api.jar"]

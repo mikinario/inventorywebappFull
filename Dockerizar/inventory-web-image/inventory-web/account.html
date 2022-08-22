@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuenta de usuario</title>
+  <link href="/vendor/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/stylesheet.css">
+
+</head>
+<body>
+  <header class="bg-primary text-light container-fluid p-3">
+    <a type="button" class="btn btn-primary btn-lg col-3" href="/inventary.html">
+      <img src="img/back-arrow.svg" alt="return" height="35">
+      <h7>Volver a la Aplicación</h7>
+  </a>
+  </header>
+  <main class="bg-white container">
+    <div class="row mb-3">
+    <h4 class="col-10 offset-2 mt-4">Cuenta y configuración</h4>
+    </div>
+    
+    <div class="row">
+      <div class="col-1 offset-2">
+        <a type="button" id="accountBtn" onmouseover="this.style.textDecoration='underline';"  onmouseout="this.style.textDecoration='none';">Cuenta</a> 
+      </div>
+      <div class="col-4">
+        <a type="button" id="confAccountsBtn" onmouseover="this.style.textDecoration='underline';"  onmouseout="this.style.textDecoration='none';">Configuración de usuarios</a>
+      </div>
+    </div>
+    <hr>
+    <div id="mainAccount">
+    
+  </div>
+  <div class="row">
+    <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="titleModal"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="bodyModal">
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  
+  <script src="js/account.js"></script>
+  <script src="vendor/bootstrap5/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

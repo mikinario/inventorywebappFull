@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+  inventory-db:
+    image: inventory-db:v1
+    container_name: docker-inventory-db
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+     - inventory_net
+    environment: 
+      - MYSQL_ROOT_PASSWORD=V02U!&w^tp3R
+      - MYSQL_DATABASE=inventory
+  inventory-api:
+    image: inventory-api:v1
+    container_name: docker-inventory-api
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    environment:
+      WAIT_HOSTS: docker-inventory-db:3306
+    networks:
+      - inventory_net
+    depends_on: 
+      - inventory-db
+
+  inventory-web:
+    image: inventory-web:v1
+    container_name: docker-inventory-web
+    ports:
+      - "80:80"
+    restart: always
+    networks:
+      - inventory_net
+    depends_on: 
+      - inventory-db
+      - inventory-api
+networks:
+  inventory_net:

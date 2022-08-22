@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario</title>
+  <link href="/vendor/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/stylesheet.css">
+
+</head>
+
+<body>
+  <header class="badge bg-primary text-light container-fluid p-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-1 center dropdown" id="userDiv">
+          <!-- <img src="/img/user.png" width="30"> -->
+          <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false"></button>
+          <ul class="dropdown-menu" aria-labelledby="userMenu" id="userOptions">
+          </ul>
+        </div>
+        <div class="col-7">
+          <h1 class="align-middle">Inventario</h1>
+          <img src="img/inventory.svg" alt="return" height="35">
+        </div>
+        <a type="button" class="btn btn-primary btn-lg col-3 offset-1" href="/recetas.html">
+          <h5>Ir a Recetas</h5>
+          <img src="img/go-arrow.svg" alt="return" height="35">
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark"
+        onclick="fetchSuppliers()">
+        Proveedores</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark"
+        onclick="fetchProducts()">
+        Productos</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg col text-white  mb-1 bg-dark"
+        onclick="fetchRestaurants()">
+        Restaurantes</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg col text-white  mb-1 bg-dark"
+        onclick="fetchInventory()">
+        Inventario</button>
+      <button type="button" class="btn btn-outline-secondary btn-lg col text-white mb-1 bg-dark" id="btnAddOrder">
+        Añadir Inventario
+      </button>
+    </div>
+    <div class="row">
+      <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="titleModal">Añade tu Producto</h5>
+
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="bodyModal">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main >
+      <div class="row mb-4 mt-2">
+        <select class="col-2" style="background-color: #DBDBDB" id="selectSearch">
+          <option value="4">Proveedores</option>
+          <option value="0" selected>Productos</option>
+          <option value="1">Restaurantes</option>
+          <option value="2">Inventario</option>
+        </select>
+        <input type="text" placeholder="busca lo que quieras" class="col-8" id="inputSearch">
+        <button type="button" class="btn btn-primary col-2" id="buttonSearch">Busca</button>
+      </div>
+      <div id="mainHtml">
+
+
+      </div>
+    </main>
+  </div>
+
+  <datalist id="restaurantDetailList"></datalist>
+  <!-- 
+  <footer class="row fixed-bottom bg-dark align-middle pt-2 text-white mt-5">
+    <h2>Feliuet es Tontico</h2>
+  </footer>
+-->
+  </div>
+  <script src="js/suppliers.js"></script>
+  <script src="js/order.js"></script>
+  <script src="js/session.js"></script>
+  <script src="vendor/bootstrap5/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/addInventory.js"></script>
+
+</body>
+
+</html>
