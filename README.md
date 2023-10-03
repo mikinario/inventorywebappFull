@@ -1,6 +1,8 @@
 ------------
 USAR DOKERIZAR para desplegar rapidamente
 
+Crear las imagenes de los 3 contenedores con el docker build de los readme, despues ejecutar el docker-compose up
+
 ------------
 
 En tu /etc/host añadir lo siguiente:
